@@ -1,2 +1,19 @@
 @import "./components/_navbar.css";
 @import "./components/_footer.css";
+
+/* Variables - Paleta StoneGym Oscura */
+:root {
+    --primary-color: #E8B923;
+    --primary-dark: #C49F1E;
+    --primary-glow: rgba(232, 185, 35, 0.2);
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-darker: #000000;
+    --text-color: #ffffff;
+    --text-light: #a0a0a0;
+    --text-muted: #666666;
+    --border-color: #2a2a2a;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 8px 30px rgba(232, 185, 35, 0.3);
+    --transition: all 0.3s ease;
+}
