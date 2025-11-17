@@ -257,3 +257,84 @@ export const clearCart = async (req, res) => {
     });
   }
 };
+
+export const checkout = async (req, res) => {
+  try {
+    const cart = await Cart.findOne({ user: req.user._id }).populate(
+      "items.product"
+    );
+
+    if (!cart || cart.items.length === 0) {
+      return res.status(400).json({
+        status: "error",
+        message: "El carrito está vacío",
+        payload: null,
+      });
+    }
+
+    for (const item of cart.items) {
+      const product = await Product.findById(item.product._id);
+
+      if (!product) {
+        return res.status(404).json({
+          status: "error",
+          message: `Producto ${item.product.name} no encontrado`,
+          payload: null,
+        });
+      }
+
+      if (!product.isActive) {
+        return res.status(400).json({
+          status: "error",
+          message: `Producto ${product.name} no está disponible`,
+          payload: null,
+        });
+      }
+
+      if (product.stock < item.quantity) {
+        return res.status(400).json({
+          status: "error",
+          message: `Stock insuficiente para ${product.name}. Disponible: ${product.stock}`,
+          payload: null,
+        });
+      }
+    }
+
+    for (const item of cart.items) {
+      await Product.findByIdAndUpdate(item.product._id, {
+        $inc: { stock: -item.quantity },
+      });
+    }
+
+    // const order = await Order.create({
+    //   user: req.user._id,
+    //   items: cart.items.map((item) => ({
+    //     product: item.product._id,
+    //     name: item.product.name,
+    //     price: item.price,
+    //     quantity: item.quantity,
+    //   })),
+    //   totalPrice: cart.totalPrice,
+    //   // status: "completed",
+    // });
+
+    cart.items = [];
+    cart.totalPrice = 0;
+    await cart.save();
+
+    // await order.populate("items.product");
+
+    return res.status(201).json({
+      status: "success",
+      message: "Compra realizada exitosamente",
+      payload: null,
+    });
+  } catch (error) {
+    logger.error("Error al finalizar compra:", error);
+    res.status(500).json({
+      status: "error",
+      message: "Error al finalizar compra",
+      payload: { error: error.message },
+    });
+  }
+};
