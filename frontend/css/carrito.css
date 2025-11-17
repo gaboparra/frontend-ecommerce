@@ -1,48 +1,61 @@
-body {
-  background-color: #f4f4f4;
+/* * {
   margin: 0;
-  padding: 20px;
-}
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+} */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--bg-dark);
+  background-color: #0a0a0a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* .header,
+.footer {
+  flex-shrink: 0;
+} */
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  flex: 1;
+  width: 100%;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #e8b923;
+  margin-bottom: 30px;
 }
 
+/* Items del carrito */
 .cart-item {
   display: flex;
-  gap: 15px;
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: #0a0a0a;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
   align-items: center;
 }
 
 .cart-item img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .item-info {
@@ -50,111 +63,125 @@ h1 {
 }
 
 .item-info h3 {
-  margin: 0 0 5px 0;
-  color: #333;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .item-info p {
-  margin: 5px 0;
-  color: #666;
+  margin: 0;
+  color: #e8b923;
+  font-size: 16px;
+  font-weight: bold;
 }
 
+/* Controles de cantidad */
 .quantity {
   display: flex;
   gap: 10px;
   align-items: center;
-  color : black;
+}
+
+.quantity span {
+  color: #ffffff;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
 }
 
 .quantity button {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ddd;
-  background-color: white;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #e8b923;
+  color: #0a0a0a;
   cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .quantity button:hover {
-  background-color: #f0f0f0;
+  background-color: #c49f1e;
 }
 
+/* Botón eliminar */
 .btn-remove {
   background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn-remove:hover {
   background-color: #c0392b;
 }
 
+/* Sección total */
 .total {
-  margin-top: 20px;
+  margin-top: 30px;
   padding-top: 20px;
-  border-top: 2px solid #333;
+  border-top: 2px solid #e8b923;
   text-align: right;
 }
 
 .total p {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
-  color: black;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.total p span {
+  color: #e8b923;
 }
 
 .total button {
-  background-color: #27ae60;
-  color: black;
+  background-color: #e8b923;
+  color: #0a0a0a;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 40px;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .total button:hover {
-  background-color: #229954;
+  background-color: #c49f1e;
+}
+
+/* Carrito vacío */
+#cartItems:empty::after {
+  content: "Tu carrito está vacío";
+  display: block;
+  text-align: center;
+  padding: 60px 20px;
+  color: #666666;
+  font-size: 18px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav {
-        display: none;
-    }
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
 
-    .menu-toggle {
-        display: flex;
-    }
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
+  .cart-item img {
+    width: 100%;
+    max-width: 200px;
+  }
 
-    .hero {
-        padding: 5rem 0 3rem;
-    }
-
-    .productos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .hero-stats {
-        gap: 2rem;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-    }
+  .total button {
+    width: 100%;
+  }
 }

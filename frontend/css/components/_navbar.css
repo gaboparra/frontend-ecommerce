@@ -1,142 +1,142 @@
 /* Header */
 .header {
-    background: var(--bg-darker);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+  background: var(--bg-darker);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
-    height: 50px;
-    width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .nav {
-    display: flex;
-    gap: 2.5rem;
+  display: flex;
+  gap: 2.5rem;
 }
 
 .nav-link {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition);
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 100%;
+  width: 100%;
 }
 
 .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .icon-btn {
-    position: relative;
-    padding: 0.5rem;
-    color: var(--text-light);
-    background: transparent;
-    border: 1px solid var(--border-color);
-    cursor: pointer;
-    border-radius: 8px;
-    transition: var(--transition);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+  position: relative;
+  padding: 0.5rem;
+  color: var(--text-light);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .icon-btn:hover {
-    background: var(--bg-card);
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+  background: var(--bg-card);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: var(--primary-color);
-    color: var(--bg-dark);
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 10px;
-    min-width: 18px;
-    text-align: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
 }
 
 .btn-login {
-    padding: 0.6rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    border: 1px solid var(--primary-color);
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.85rem;
-    color: var(--primary-color);
-    background: transparent;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  background: transparent;
 }
 
 .btn-login:hover {
-    background: var(--primary-color);
-    color: var(--bg-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--primary-glow);
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--primary-glow);
 }
 
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background: var(--text-light);
-    border-radius: 3px;
-    transition: var(--transition);
+  width: 25px;
+  height: 2px;
+  background: var(--text-light);
+  border-radius: 3px;
+  transition: var(--transition);
 }
