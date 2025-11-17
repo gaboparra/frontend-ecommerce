@@ -4,6 +4,19 @@ body {
   padding: 20px;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -50,6 +63,7 @@ h1 {
   display: flex;
   gap: 10px;
   align-items: center;
+  color : black;
 }
 
 .quantity button {
@@ -88,11 +102,12 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 15px;
+  color: black;
 }
 
 .total button {
   background-color: #27ae60;
-  color: white;
+  color: black;
   border: none;
   padding: 12px 30px;
   font-size: 16px;
@@ -102,4 +117,44 @@ h1 {
 
 .total button:hover {
   background-color: #229954;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding: 5rem 0 3rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-stats {
+        gap: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
 }
