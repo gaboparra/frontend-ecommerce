@@ -49,7 +49,7 @@ export const getProductById = async (req, res) => {
 
 export const createProduct = async (req, res) => {
   try {
-    const { name, description, price, stock, category } = req.body;
+    const { name, description, price, stock, category, image } = req.body;
 
     if (!name || !description || price === undefined) {
       return res.status(400).json({
@@ -72,6 +72,7 @@ export const createProduct = async (req, res) => {
       description,
       price,
       stock: stock || 0,
+      image: image || "default-product.jpg",
       //   category,
     });
 
@@ -92,7 +93,7 @@ export const createProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   try {
-    const { name, description, price, stock, category, isActive } = req.body;
+    const { name, description, price, stock, category, isActive, image } = req.body;
 
     const product = await Product.findById(req.params.id);
     if (!product) {
@@ -123,6 +124,7 @@ export const updateProduct = async (req, res) => {
     if (description) product.description = description;
     if (price !== undefined) product.price = price;
     if (stock !== undefined) product.stock = stock;
+    if (image) product.image = image;
     // if (category) product.category = category;
     if (typeof isActive === "boolean") product.isActive = isActive;
 
