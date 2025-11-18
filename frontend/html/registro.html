@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Crear Cuenta</h2>
+            <p class="subtitle">Únete a nosotros hoy</p>
+            
+            <div id="registerMessage" class="message"></div>
+            
+            <form onsubmit="handleRegister(event)">
+                <div class="input-group">
+                    <label for="registerUsername">Nombre de Usuario</label>
+                    <input type="text" id="registerUsername" required placeholder="usuario123">
+                </div>
+                
+                <div class="input-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="input-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" required placeholder="••••••••" oninput="checkPasswordStrength(this.value)">
+                    <div id="passwordStrength" class="password-strength"></div>
+                </div>
+                
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+            
+            <div class="toggle-form">
+                ¿Ya tienes cuenta? <a href="../html/login.html">Inicia sesión aquí</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/registro.js"></script>
+</body>
+</html>
