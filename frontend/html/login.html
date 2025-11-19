@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,29 @@
     <link rel="shortcut icon" href="../img/identity/stonegym-favicon-1.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/login.css">
 </head>
+
 <body>
     <div class="container">
         <div class="form-container">
             <h2>Iniciar Sesión</h2>
             <p class="subtitle">Bienvenido de vuelta</p>
-            
+
             <div id="loginMessage" class="message"></div>
-            
+
             <form onsubmit="handleLogin(event)">
                 <div class="input-group">
                     <label for="loginEmail">Email</label>
                     <input type="email" id="loginEmail" required placeholder="tu@email.com">
                 </div>
-                
+
                 <div class="input-group">
                     <label for="loginPassword">Contraseña</label>
                     <input type="password" id="loginPassword" required placeholder="••••••••">
                 </div>
-                
+
                 <button type="submit" class="btn">Iniciar Sesión</button>
             </form>
-            
+
             <div class="toggle-form">
                 ¿No tienes cuenta? <a href="../html/registro.html">Regístrate aquí</a>
             </div>
@@ -37,4 +39,5 @@
 
     <script src="../js/login.js"></script>
 </body>
+
 </html>
