@@ -11,7 +11,6 @@ body {
   background-color: var(--bg-dark);
 }
 
-/* Hero Section */
 .hero {
   position: relative;
   padding: 8rem 0 6rem;
@@ -137,7 +136,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Productos Section */
 .productos-section {
   padding: 5rem 0;
   background: var(--bg-darker);
@@ -174,7 +172,6 @@ body {
   color: var(--text-light);
 }
 
-/* Producto Card*/
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -307,7 +304,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;

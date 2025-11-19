@@ -1,7 +1,6 @@
 @import "./components/_navbar.css";
 @import "./components/_footer.css";
 
-/* Variables */
 :root {
   --primary-color: #e8b923;
   --primary-dark: #c49f1e;
