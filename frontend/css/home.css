@@ -11,12 +11,6 @@ body {
     background-color: var(--bg-dark);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -77,13 +71,6 @@ body {
     line-height: 1.7;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-}
-
 .btn-primary-large,
 .btn-outline-large {
     padding: 1rem 2.5rem;
@@ -96,6 +83,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: inline-block;
 }
 
 .btn-primary-large {
@@ -183,10 +171,11 @@ body {
     color: var(--text-light);
 }
 
+/* Producto Card - Con espaciado mejorado */
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
 .producto-card {
@@ -195,6 +184,9 @@ body {
     border-radius: 15px;
     overflow: hidden;
     transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .producto-card:hover {
@@ -242,6 +234,9 @@ body {
 
 .producto-info {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .producto-categoria {
@@ -262,8 +257,14 @@ body {
 
 .producto-descripcion {
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
+}
+
+.producto-stock {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .producto-footer {
@@ -271,6 +272,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .producto-precio {
@@ -304,29 +306,12 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
     .hero-title {
         font-size: 2.5rem;
     }
 
     .hero {
         padding: 5rem 0 3rem;
-    }
-
-    .productos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
     }
 
     .section-title {
@@ -339,5 +324,9 @@ body {
 
     .stat-number {
         font-size: 2rem;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr;
     }
 }

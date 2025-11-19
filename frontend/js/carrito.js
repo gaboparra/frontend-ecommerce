@@ -37,7 +37,7 @@ function showCart(cart) {
 
   if (cart.items.length === 0) {
     cartItems.innerHTML =
-      '<p style="text-align:center; color: black;">Tu carrito está vacío</p>';
+      '<p style="text-align:center; color: white;">Tu carrito está vacío</p>';
     totalPrice.textContent = "0";
     return;
   }

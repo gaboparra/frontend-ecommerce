@@ -31,8 +31,8 @@
 }
 
 .nav-link {
-  color: var(--text-light);
-  text-decoration: none;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
   font-weight: 500;
   font-size: 0.95rem;
   transition: var(--transition);
@@ -52,12 +52,18 @@
   transition: var(--transition);
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-color);
+.nav-link:hover {
+  color: var(--primary-color) !important;
 }
 
-.nav-link:hover::after,
+.nav-link.active {
+  color: var(--text-color) !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-link.active::after {
   width: 100%;
 }
@@ -89,7 +95,6 @@
 }
 
 .cart-count {
-  position: absolute;
   top: -5px;
   right: -5px;
   background: var(--primary-color);
@@ -139,4 +144,14 @@
   background: var(--text-light);
   border-radius: 3px;
   transition: var(--transition);
+}
+
+@media (max-width: 991px) {
+  .nav {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
 }
