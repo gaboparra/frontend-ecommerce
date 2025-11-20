@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.innerHTML = `
             <div class="producto-image">
                 <img src="${imagenUrl}" 
-                     alt="${prod.name}"
+                     alt="${prod.name}">
                 ${badge}
             </div>
 
