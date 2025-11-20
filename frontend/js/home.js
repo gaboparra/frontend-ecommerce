@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const productosGrid = document.getElementById("productos-grid");
   const API_URL = "http://localhost:8080/api/products";
 
-  // ========== PRODUCTOS ==========
 
   function mostrarLoading() {
     productosGrid.innerHTML = `
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderizarProductos(productos);
     } catch (err) {
-      console.error("❌ Error al cargar productos:", err);
+      console.error("Error al cargar productos:", err);
       productosGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
                     <p style="color: #ff0055; font-size: 1.2rem;">Error al cargar los productos</p>
@@ -80,9 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (prod.image && prod.image !== "default-product.jpg") {
       imagenUrl = `./img/products/${prod.image}`;
-    } else {
-      imagenUrl =
-        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&fit=crop";
     }
 
     let badge = "";
@@ -99,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="producto-image">
                 <img src="${imagenUrl}" 
                      alt="${prod.name}"
-                     onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&fit=crop'">
                 ${badge}
             </div>
 
@@ -132,11 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"'
                                 : ""
                             }>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="9" cy="21" r="1" />
-                            <circle cx="20" cy="21" r="1" />
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                        </svg>
                         ${prod.stock === 0 ? "Sin stock" : "Agregar"}
                     </button>
                 </div>
